@@ -5,10 +5,10 @@ with source as (
 )
 
 select distinct 
-    case when payment_method = 'credit_card' then 1
+    case when payment_method = 'bank_transfer' then 1
     when payment_method = 'coupon' then 2
-    when payment_method = 'bank_transfer' then 3
+    when payment_method = 'credit_card' then 3
     when payment_method = 'gift_card' then 4
-    else '99' end as payment_method_id,
+    else 99 end as payment_method_id,
     payment_method
 from source
